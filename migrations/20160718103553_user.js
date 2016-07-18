@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
     table.string('password');
 
     table.integer('totalGrade');
+    table.integer('assignmentsComplete');
 
     table.boolean('isSiteAdmin');
   });
