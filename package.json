@@ -1,0 +1,37 @@
+{
+  "name": "github_blog",
+  "version": "0.0.1",
+  "description": "An app that allows for easy linking of a github repo for the creation of a blog.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkaffrey/githubblog.git"
+  },
+  "author": "Jeremy Kaffrey <jkaffrey@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jkaffrey/githubblog/issues"
+  },
+  "homepage": "https://github.com/jkaffrey/githubblog#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "checkit": "^0.7.0",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-alpha.1",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "favicon": "0.0.2",
+    "handlebars": "^4.0.5",
+    "handlebars-intl": "^1.1.2",
+    "knex": "^0.11.7",
+    "logger": "0.0.1",
+    "path": "^0.12.7",
+    "pg": "^6.0.1",
+    "serve-favicon": "^2.3.0"
+  }
+}
