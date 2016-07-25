@@ -15,6 +15,7 @@ rp(options).then(function (body) {
 
   var jObj = JSON.parse(body);
   var dirs = [];
+  var downloads = [];
 
   for (var thing in jObj) {
     if (jObj[thing].type === 'dir') {
@@ -24,6 +25,7 @@ rp(options).then(function (body) {
     } else if (jObj[thing].type === 'file' && jObj[thing].name.indexOf('.md') >= 0) {
 
       console.log(jObj[thing].name);
+      downloads.push(jObj[thing].download_url);
     }
   }
 
@@ -48,8 +50,14 @@ rp(options).then(function (body) {
         } else if (jObj[thing].type === 'file' && jObj[thing].name.indexOf('.md') >= 0) {
 
           console.log(jObj[thing].name);
+          downloads.push(jObj[thing].download_url);
         }
       }
     });
+  }
+
+  for (var i = 0; i < downloads.length; i++) {
+
+    console.log(downloads[i]);
   }
 });
