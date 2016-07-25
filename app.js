@@ -1,5 +1,13 @@
 'use strict';
 
+// Access raw github files
+// https://raw.githubusercontent.com/jkaffrey/githubblog/master/app.js
+
+// Get github api info from repo
+// https://api.github.com/repos/jkaffrey/githubblog
+// https://api.github.com/repos/jkaffrey/githubblog/contents -- all the contents TODO: THE HOLY GRAIL!
+// https://api.github.com/repos/jkaffrey/githubblog/contents/{directory}
+
 require('dotenv').load();
 var express = require('express');
 var path = require('path');
@@ -10,8 +18,6 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var handlebars = require('express-handlebars');
 var knex = require('./db/knex');
-var passport = require('passport');
-var Strategy = require('passport-facebook').Strategy;
 
 /* Require Routes */
 //TODO
