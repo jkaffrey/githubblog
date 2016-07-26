@@ -1,5 +1,6 @@
 'use strict';
 
+var scraper = require('website-scraper');
 var request = require('request');
 var rp = require('request-promise');
 const gitApi = 'https://api.github.com/repos/jkaffrey/githubblog/contents';
@@ -11,11 +12,12 @@ var options = {
   }
 };
 
+var downloads = [];
+
 rp(options).then(function (body) {
 
   var jObj = JSON.parse(body);
   var dirs = [];
-  var downloads = [];
 
   for (var thing in jObj) {
     if (jObj[thing].type === 'dir') {
@@ -55,9 +57,16 @@ rp(options).then(function (body) {
       }
     });
   }
+}).then(function (data) {
 
-  for (var i = 0; i < downloads.length; i++) {
+  var options = {
+    urls: downloads,
+    directory: './filesGot',
+    filenameGenerator: 'bySiteStructure'
+  };
 
-    console.log(downloads[i]);
-  }
+  scraper.scrape(options).then(function (result) {
+
+    console.log(result);
+  }).catch(console.log);
 });
